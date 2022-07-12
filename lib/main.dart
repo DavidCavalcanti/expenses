@@ -18,9 +18,12 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Card(
-            child: Text('Gráfico'),
-            elevation: 5,
+          Container(
+            width: double.infinity,
+            child: Card(
+              child: Text('Gráfico'),
+              elevation: 5,
+            ),
           ),
           Card(
             child: Text('Lista de Transações'),
