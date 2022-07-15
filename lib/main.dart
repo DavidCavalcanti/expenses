@@ -30,16 +30,16 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Despesas Pessoais'),
+        title: const Text('Despesas Pessoais'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            child: Card(
-              child: Text('Gráfico'),
+            child: const Card(
               elevation: 5,
+              child: Text('Gráfico'),
             ),
           ),
           Column(
@@ -48,9 +48,9 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      child: Text(
-                        tr.value.toString()
-                      ),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),                      
+                      child: Text(tr.value.toString()),
                     ),
                     Column(
                       children: [
