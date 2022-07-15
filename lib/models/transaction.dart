@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 
 class Transaction {
   late final String? id;
