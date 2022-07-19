@@ -4,7 +4,7 @@ class TransactionForm extends StatelessWidget {
   late final titleController = TextEditingController();
   late final valueController = TextEditingController();
 
-  final void Function(String, double) onSubmit;
+  late final void Function(String, double)? onSubmit;
 
   TransactionForm(this.onSubmit);
 
@@ -17,7 +17,7 @@ class TransactionForm extends StatelessWidget {
     if (title.isEmpty || value <= 0) {
       return;
     }
-    onSubmit(title, value);
+    onSubmit!(title, value);
   }
 
   @override
