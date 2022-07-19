@@ -35,12 +35,13 @@ class MyHomePage extends StatelessWidget {
             ),
             TransactionUser(),
           ],
-        ),
+        ),        
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child:  Icon(Icons.add),
         onPressed: () {},
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
