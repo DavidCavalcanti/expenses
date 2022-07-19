@@ -8,6 +8,18 @@ class TransactionForm extends StatelessWidget {
 
   TransactionForm(this.onSubmit);
 
+  _submitForm() {
+    final title = titleController.text;
+    final value =
+        double.tryParse(valueController.text) ?? 0.0; // converter em double
+
+    // Verificar dados inválidos
+    if (title.isEmpty || value <= 0) {
+      return;
+    }
+    onSubmit(title, value);
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -19,13 +31,13 @@ class TransactionForm extends StatelessWidget {
           children: [
             TextField(
               controller: titleController,
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
                 labelText: 'Título',
               ),
             ),
             TextField(
               controller: valueController,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
                 labelText: 'Valor (R\$)',
               ),
@@ -38,12 +50,7 @@ class TransactionForm extends StatelessWidget {
                     primary: Colors.purple,
                   ),
                   child: const Text('Nova Transação'),
-                  onPressed: () {
-                    final title = titleController.text;
-                    final value = double.tryParse(valueController.text) ??
-                        0.0; // converter em double
-                    onSubmit(title, value);
-                  },
+                  onPressed: _submitForm,
                 ),
               ],
             ),

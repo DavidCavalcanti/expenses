@@ -28,42 +28,6 @@ class _MyWidgetState extends State<TransactionUser> {
       value: 110.30,
       date: DateTime.now(),
     ),
-    Transaction(
-      id: 't2',
-      title: '#02',
-      value: 110.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't3',
-      title: '#03',
-      value: 110.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't4',
-      title: '#04',
-      value: 110.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't4',
-      title: '#04',
-      value: 110.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't5',
-      title: '#05',
-      value: 110.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't6',
-      title: '#06',
-      value: 110.30,
-      date: DateTime.now(),
-    ),
   ];
 
   _addTransaction(String title, double value) {
@@ -84,7 +48,7 @@ class _MyWidgetState extends State<TransactionUser> {
     return Column(
       children: [
         TransactionForm(_addTransaction),
-        TransactionList(_transactions),        
+        TransactionList(_transactions),
       ],
     );
   }
