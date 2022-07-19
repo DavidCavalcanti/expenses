@@ -117,8 +117,8 @@ class MyHomePage extends StatelessWidget {
                         ),
                         child: const Text('Nova Transação'),
                         onPressed: () {
-                          print(titleController);
-                          print(valueController);
+                          print(titleController.text);
+                          print(valueController.text);
                         },
                       ),
                     ],
