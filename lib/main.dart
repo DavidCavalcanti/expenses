@@ -116,7 +116,10 @@ class MyHomePage extends StatelessWidget {
                           primary: Colors.purple,
                         ),
                         child: const Text('Nova Transação'),
-                        onPressed: () {},
+                        onPressed: () {
+                          print(titleController);
+                          print(valueController);
+                        },
                       ),
                     ],
                   ),
