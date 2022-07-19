@@ -1,3 +1,4 @@
+import 'package:expenses/components/transection_list.dart';
 import 'package:expenses/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -45,7 +46,7 @@ class MyHomePage extends StatelessWidget {
               child: Text('Gráfico'),
             ),
           ),
-          
+          TransactionList(_transactions),
           Card(
             elevation: 5,
             child: Padding(
