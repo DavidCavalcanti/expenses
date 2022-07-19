@@ -2,19 +2,22 @@ import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 import '../components/transaction_form.dart';
 import '../components/transection_list.dart';
-import '../models/transaction.dart';
+import 'models/transaction.dart';
 import 'dart:math';
 
-main() => runApp(ExpensesApp());
+main() => runApp(const ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
+  const ExpensesApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return const MaterialApp(home: MyHomePage());
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -29,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     Transaction(
       id: 't2',
-      title: '#01',
+      title: 'Conta de Luz',
       value: 110.30,
       date: DateTime.now(),
     ),
@@ -52,10 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _opentransactionFormModal(BuildContext context) {
     showModalBottomSheet(
-        context: context,
-        builder: (_) {
-          return TransactionForm(_addTransaction);
-        });
+      context: context,
+      builder: (_) {
+        return TransactionForm(_addTransaction);
+      },
+    );
   }
 
   @override
@@ -65,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Despesas Pessoais'),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () => _opentransactionFormModal(context),
           ),
         ],
@@ -74,8 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              child: const Card(
+            const SizedBox(
+              child: Card(
+                color: Colors.blue,
                 elevation: 5,
                 child: Text('Gráfico'),
               ),
@@ -85,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => _opentransactionFormModal(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

@@ -3,18 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
-  late final List<Transaction> transactions;
+  final List<Transaction> transactions;
 
-  TransactionList(this.transactions); // construtor
+  const TransactionList(this.transactions, {Key? key})
+      : super(key: key); // construtor
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
+    return SizedBox(
       height: 300,
       child: ListView.builder(
         itemCount: transactions.length, // Quantidade de ítens da lista
-        itemBuilder: (ctx, index) { // chamar função e exibir elementos 
+        itemBuilder: (ctx, index) {
+          // chamar função e exibir elementos
           final tr = transactions[index];
           return Card(
             child: Row(
