@@ -37,6 +37,10 @@ class _MyWidgetState extends State<TransactionUser> {
       value: value,
       date: DateTime.now(),
     );
+
+    setState(() {
+      _transactions.add(newTransaction);
+    });
   }
 
   @override
