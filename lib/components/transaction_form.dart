@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
-class TransactionForm extends StatelessWidget {
-  late final titleController = TextEditingController();
-  late final valueController = TextEditingController();
-
+class TransactionForm extends StatefulWidget {
   late final void Function(String, double)? onSubmit;
 
   TransactionForm(this.onSubmit);
+
+  @override
+  State<TransactionForm> createState() => _TransactionFormState();
+}
+
+class _TransactionFormState extends State<TransactionForm> {
+  late final titleController = TextEditingController();
+
+  late final valueController = TextEditingController();
 
   _submitForm() {
     final title = titleController.text;
@@ -17,7 +23,7 @@ class TransactionForm extends StatelessWidget {
     if (title.isEmpty || value <= 0) {
       return;
     }
-    onSubmit!(title, value);
+    widget.onSubmit!(title, value);
   }
 
   @override
