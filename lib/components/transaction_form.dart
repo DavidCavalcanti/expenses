@@ -40,7 +40,7 @@ class TransactionForm extends StatelessWidget {
               controller: valueController,
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               onSubmitted: (_) =>
-                  _submitForm(), // "_" usad o para informar que o parâmetro não será usado
+                  _submitForm(), // "_" usado para informar que o parâmetro não será usado
               decoration: InputDecoration(
                 labelText: 'Valor (R\$)',
               ),
