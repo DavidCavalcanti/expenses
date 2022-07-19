@@ -13,9 +13,6 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  late final titleController = TextEditingController();
-  late final valueController = TextEditingController();
-
   final _transactions = [
     Transaction(
       id: 't1',
@@ -47,7 +44,6 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           TransactionList(_transactions),
-          
         ],
       ),
     );
