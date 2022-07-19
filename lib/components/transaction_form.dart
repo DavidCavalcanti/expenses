@@ -19,6 +19,7 @@ class TransactionForm extends StatelessWidget {
           children: [
             TextField(
               controller: titleController,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
                 labelText: 'Título',
               ),
