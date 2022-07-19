@@ -4,6 +4,10 @@ class TransactionForm extends StatelessWidget {
   late final titleController = TextEditingController();
   late final valueController = TextEditingController();
 
+  final void Function(String, double) onSubmit;
+
+  TransactionForm(this.onSubmit);
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -34,8 +38,10 @@ class TransactionForm extends StatelessWidget {
                   ),
                   child: const Text('Nova Transação'),
                   onPressed: () {
-                    print(titleController.text);
-                    print(valueController.text);
+                    final title = titleController.text;
+                    final value = double.tryParse(valueController.text) ??
+                        0.0; // converter em double
+                    onSubmit(title, value);
                   },
                 ),
               ],
