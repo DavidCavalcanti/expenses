@@ -53,13 +53,13 @@ class _TransactionFormState extends State<TransactionForm> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
+                  onPressed: _submitForm,
                   child: const Text(
                     'Nova Transação',
                     style: TextStyle(
                       color: Colors.purple,
                     ),
                   ),
-                  onPressed: _submitForm,
                 )
               ],
             ),
